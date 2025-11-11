@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}View Note{% endblock %}
+{% block content %}
+<h3>{{ note.title }}</h3>
+<p>{{ note.content }}</p>
+
+<div class="mt-3">
+  <a href="{{ url_for('updatenote', id=note.id) }}" class="btn btn-warning">Edit</a>
+  <form method="POST" action="{{ url_for('deletenote', id=note.id) }}" style="display:inline;">
+    <button type="submit" class="btn btn-danger">Delete</button>
+  </form>
+  <a href="/viewnotes" class="btn btn-secondary">Back</a>
+</div>
+{% endblock %}

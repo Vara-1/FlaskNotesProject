@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}My Notes{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3 class="mb-0">My Notes</h3>
+
+  <!-- ✅ Add New Note Button -->
+  <a href="{{ url_for('addnote') }}" class="btn btn-success btn-sm">+ Add New Note</a>
+</div>
+
+{% if notes %}
+  <div class="list-group">
+    {% for note in notes %}
+      <a href="{{ url_for('singlenote', id=note.id) }}" class="list-group-item list-group-item-action mb-2">
+        <h5 class="mb-1">{{ note.title }}</h5>
+        <p class="text-muted small mb-1">{{ note.created_at }}</p>
+      </a>
+    {% endfor %}
+  </div>
+{% else %}
+  <p class="text-center text-muted">
+    No notes available. <a href="{{ url_for('addnote') }}">Add one now</a>.
+  </p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="text-center mt-5">
+  <h1>Welcome to NotesApp</h1>
+  <p class="text-muted">Save, edit, and manage your personal notes easily.</p>
+  {% if 'user_id' not in session %}
+  <a href="/register" class="btn btn-primary">Get Started</a>
+  {% else %}
+  <a href="/viewnotes" class="btn btn-success">Go to My Notes</a>
+  {% endif %}
+</div>
+{% endblock %}

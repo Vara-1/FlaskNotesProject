@@ -1,0 +1,25 @@
+body {
+  background-color: #f9fafb;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  background-color: #343a40;
+}
+
+.navbar a {
+  color: white !important;
+  font-weight: 500;
+}
+main{
+  min-height: 70vh;
+}
+
+
+footer {
+  background: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 50px;
+}
