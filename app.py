@@ -9,7 +9,7 @@ from datetime import timedelta
 # Flask App Initialization
 app = Flask(__name__)
 app.secret_key = "myverysecretkey"
-app.permanent_session_lifetime = timedelta(seconds=10)  # Default session timeout
+app.permanent_session_lifetime = timedelta(seconds=120)  # Default session timeout
 
 # Serializer for generating secure tokens
 serializer = URLSafeTimedSerializer(app.secret_key)
@@ -91,9 +91,9 @@ def login():
 
             # ✅ Adjust session lifetime based on Remember Me
             if remember:
-                app.permanent_session_lifetime = timedelta(seconds=10)
+                app.permanent_session_lifetime = timedelta(seconds=120)
             else:
-                app.permanent_session_lifetime = timedelta(seconds=10)
+                app.permanent_session_lifetime = timedelta(seconds=120)
 
             session['user_id'] = user['id']
             session['username'] = user['username']
