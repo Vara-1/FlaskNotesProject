@@ -1,25 +1,114 @@
+/* ===== General Styles ===== */
 body {
   background-color: #f9fafb;
   font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+/* ===== Navbar ===== */
 .navbar {
   background-color: #343a40;
+  padding: 10px 0;
 }
 
 .navbar a {
   color: white !important;
   font-weight: 500;
 }
-main{
-  min-height: 70vh;
+
+.navbar a:hover {
+  color: #ffc107 !important; /* gold hover */
+  text-decoration: none;
 }
 
+/* Hamburger Button Styling */
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
 
+.navbar-toggler-icon {
+  filter: invert(100%);
+}
+
+/* ===== Main Content Area ===== */
+main {
+  flex: 1;
+  min-height: 70vh;
+  padding-bottom: 40px;
+}
+
+/* ===== Footer ===== */
 footer {
   background: #343a40;
   color: #fff;
   text-align: center;
   padding: 10px 0;
-  margin-top: 50px;
+  margin-top: auto;
+  bottom: 0;
+  width: 100%;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* ===== Notes List ===== */
+.list-group-item {
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.list-group-item:hover {
+  transform: scale(1.02);
+}
+
+/* ===== Form Styles ===== */
+form {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+form input, form textarea {
+  border-radius: 5px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+    background-color: #343a40;
+    padding: 10px 0;
+  }
+
+  .list-group-item {
+    font-size: 0.9rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  h3, h5 {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
 }
